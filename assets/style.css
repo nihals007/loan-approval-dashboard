@@ -1,0 +1,454 @@
+/* ── FONTS ── */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Mono:wght@400;500&display=swap");
+
+/* ── VARIABLES ── */
+:root {
+  --bg-main: #1a1a2e;
+  --bg-card: #16213e;
+  --bg-card2: #1f2b47;
+  --bg-hover: #243352;
+  --bg-sidebar: #12192c;
+  --neon: #d4ff00;
+  --neon-glow: rgba(212, 255, 0, 0.25);
+  --neon-dark: #a8cc00;
+  --teal: #00d4b4;
+  --teal-glow: rgba(0, 212, 180, 0.2);
+  --purple: #7c5cbf;
+  --orange: #ff6b35;
+  --border: rgba(255, 255, 255, 0.07);
+  --border-neon: rgba(212, 255, 0, 0.35);
+  --text: #ffffff;
+  --text-sub: #94a3b8;
+  --text-muted: #4a5568;
+  --radius: 18px;
+  --radius-sm: 12px;
+  --radius-xs: 8px;
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* ── GLOBAL ── */
+* {
+  box-sizing: border-box;
+}
+
+.stApp {
+  background-color: var(--bg-main) !important;
+  background-image:
+    radial-gradient(
+      ellipse 50% 40% at 80% 10%,
+      rgba(212, 255, 0, 0.06) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 40% 30% at 5% 80%,
+      rgba(0, 212, 180, 0.06) 0%,
+      transparent 50%
+    ) !important;
+  font-family: "Outfit", sans-serif !important;
+  color: var(--text) !important;
+}
+
+/* ── HIDE STREAMLIT CHROME ── */
+#MainMenu,
+footer,
+header {
+  visibility: hidden !important;
+}
+.block-container {
+  padding-top: 2rem !important;
+  max-width: 1280px !important;
+}
+
+/* ── TYPOGRAPHY ── */
+h1 {
+  font-family: "Outfit", sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 2.2rem !important;
+  color: var(--text) !important;
+  letter-spacing: -1px !important;
+  -webkit-text-fill-color: var(--text) !important;
+  background: none !important;
+}
+
+h2 {
+  font-family: "Outfit", sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 1.15rem !important;
+  color: var(--text) !important;
+  border: none !important;
+  padding-left: 0 !important;
+  margin-top: 1.2rem !important;
+}
+
+h3 {
+  font-family: "Outfit", sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 0.75rem !important;
+  color: var(--text-muted) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+}
+
+p,
+li {
+  font-family: "Outfit", sans-serif !important;
+  color: var(--text-sub) !important;
+}
+
+/* ── SIDEBAR ── */
+[data-testid="stSidebar"] {
+  background: var(--bg-sidebar) !important;
+  border-right: 1px solid var(--border) !important;
+}
+
+[data-testid="stSidebar"] .block-container {
+  padding: 2rem 1.2rem !important;
+}
+
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3 {
+  color: var(--text) !important;
+  -webkit-text-fill-color: var(--text) !important;
+  background: none !important;
+  border: none !important;
+  padding-left: 0 !important;
+  letter-spacing: normal !important;
+  text-transform: none !important;
+}
+
+[data-testid="stSidebar"] label {
+  color: var(--text-sub) !important;
+  font-size: 0.8rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  font-weight: 600 !important;
+}
+
+[data-testid="stSidebar"] p {
+  color: var(--text-sub) !important;
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+}}
+
+[data-testid="stSidebar"] hr {
+  border-top: 1px solid var(--border) !important;
+}
+
+/* ── FILE UPLOADER ── */
+[data-testid="stFileUploader"] {
+  background: var(--bg-card2) !important;
+  border: 1.5px dashed var(--border-neon) !important;
+  border-radius: var(--radius-sm) !important;
+  transition: all 0.3s ease !important;
+}
+
+[data-testid="stFileUploader"]:hover {
+  border-color: var(--neon) !important;
+  box-shadow: 0 0 20px var(--neon-glow) !important;
+}
+
+/* ── TABS ── */
+.stTabs [data-baseweb="tab-list"] {
+  background: var(--bg-card) !important;
+  border-radius: var(--radius-sm) !important;
+  padding: 5px !important;
+  border: 1px solid var(--border) !important;
+  gap: 2px !important;
+}
+
+.stTabs [data-baseweb="tab"] {
+  background: transparent !important;
+  color: var(--text-sub) !important;
+  border-radius: var(--radius-xs) !important;
+  font-family: "Outfit", sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 0.82rem !important;
+  padding: 8px 16px !important;
+  transition: all 0.2s ease !important;
+  border: none !important;
+}
+
+.stTabs [data-baseweb="tab"]:hover {
+  background: var(--bg-hover) !important;
+  color: var(--text) !important;
+}
+
+.stTabs [aria-selected="true"] {
+  background: var(--neon) !important;
+  color: #111827 !important;
+  font-weight: 800 !important;
+  box-shadow: 0 4px 16px var(--neon-glow) !important;
+}
+
+/* ── METRIC CARDS ── */
+[data-testid="stMetric"] {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius) !important;
+  padding: 22px !important;
+  box-shadow: var(--shadow) !important;
+  transition: all 0.25s ease !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+[data-testid="stMetric"]:hover {
+  transform: translateY(-3px) !important;
+  border-color: var(--border-neon) !important;
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.5),
+    0 0 0 1px var(--border-neon) !important;
+}
+
+/* Neon bottom glow bar */
+[data-testid="stMetric"]::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 2px !important;
+  background: linear-gradient(
+    90deg,
+    var(--neon),
+    var(--teal),
+    transparent
+  ) !important;
+}
+
+[data-testid="stMetricLabel"] p {
+  color: var(--text-sub) !important;
+  font-size: 0.75rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1.5px !important;
+  font-weight: 600 !important;
+}
+
+[data-testid="stMetricValue"] {
+  font-family: "Outfit", sans-serif !important;
+  font-size: 2.2rem !important;
+  font-weight: 800 !important;
+  color: var(--text) !important;
+  -webkit-text-fill-color: var(--text) !important;
+  letter-spacing: -1px !important;
+}
+
+/* ── BUTTONS — FIXED TEXT VISIBILITY ── */
+.stButton > button {
+  background: var(--neon) !important;
+  color: #111827 !important; /* ← dark text on neon bg, always visible */
+  -webkit-text-fill-color: #111827 !important;
+  border: none !important;
+  border-radius: var(--radius-xs) !important;
+  padding: 10px 22px !important;
+  font-family: "Outfit", sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 0.9rem !important;
+  letter-spacing: 0.3px !important;
+  transition: all 0.25s ease !important;
+  box-shadow: 0 4px 20px var(--neon-glow) !important;
+  width: 100% !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+}
+
+.stButton > button * {
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+  opacity: 1 !important;
+}
+
+.stButton > button:hover {
+  background: #c8f000 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 32px var(--neon-glow) !important;
+}
+
+.stButton > button:active {
+  transform: translateY(0) !important;
+}
+
+/* ── SELECTBOX ── */
+[data-testid="stSelectbox"] > div > div {
+  background: var(--bg-card2) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-xs) !important;
+  color: var(--text) !important;
+  font-family: "Outfit", sans-serif !important;
+  transition: border-color 0.2s !important;
+}
+
+[data-testid="stSelectbox"] > div > div:focus-within {
+  border-color: var(--neon) !important;
+  box-shadow: 0 0 0 3px var(--neon-glow) !important;
+}
+
+/* ── SLIDERS ── */
+[data-testid="stSlider"] [role="slider"] {
+  background: var(--neon) !important;
+  border: 2px solid #111 !important;
+  box-shadow: 0 0 12px var(--neon-glow) !important;
+}
+
+/* ── RADIO ── */
+[data-testid="stRadio"] label {
+  background: var(--bg-card2) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-xs) !important;
+  padding: 8px 14px !important;
+  color: var(--text-sub) !important;
+  font-family: "Outfit", sans-serif !important;
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  transition: all 0.2s !important;
+  cursor: pointer !important;
+}
+
+[data-testid="stRadio"] label:hover {
+  border-color: var(--neon) !important;
+  color: var(--neon) !important;
+  background: rgba(212, 255, 0, 0.05) !important;
+}
+
+/* ── CHECKBOX ── */
+[data-testid="stCheckbox"] label {
+  color: var(--text) !important;
+  font-family: "Outfit", sans-serif !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+}
+
+/* ── DATAFRAME ── */
+[data-testid="stDataFrame"] {
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius) !important;
+  overflow: hidden !important;
+}
+
+[data-testid="stDataFrame"] th {
+  background: var(--bg-card2) !important;
+  color: var(--text-sub) !important;
+  font-family: "Outfit", sans-serif !important;
+  font-size: 0.75rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  font-weight: 700 !important;
+  border-bottom: 1px solid var(--border) !important;
+  padding: 12px 16px !important;
+}
+
+[data-testid="stDataFrame"] td {
+  color: var(--text) !important;
+  font-family: "DM Mono", monospace !important;
+  font-size: 0.82rem !important;
+  border-bottom: 1px solid var(--border) !important;
+  padding: 10px 16px !important;
+  background: var(--bg-card) !important;
+}
+
+[data-testid="stDataFrame"] tr:hover td {
+  background: var(--bg-hover) !important;
+}
+
+/* ── ALERTS ── */
+[data-baseweb="notification"] {
+  background: rgba(212, 255, 0, 0.07) !important;
+  border-left: 3px solid var(--neon) !important;
+  border-radius: var(--radius-xs) !important;
+  color: var(--neon) !important;
+}
+
+.stInfo {
+  background: rgba(0, 212, 180, 0.07) !important;
+  border-left: 3px solid var(--teal) !important;
+  border-radius: var(--radius-xs) !important;
+}
+
+.stWarning {
+  background: rgba(255, 107, 53, 0.08) !important;
+  border-left: 3px solid var(--orange) !important;
+  border-radius: var(--radius-xs) !important;
+}
+
+/* ── JSON ── */
+.stJson {
+  background: var(--bg-card2) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-xs) !important;
+  font-family: "DM Mono", monospace !important;
+  font-size: 0.85rem !important;
+}
+
+/* ── DIVIDER ── */
+hr {
+  border: none !important;
+  border-top: 1px solid var(--border) !important;
+  margin: 1.5rem 0 !important;
+}
+
+/* ── SPINNER ── */
+[data-testid="stSpinner"] > div {
+  border-top-color: var(--neon) !important;
+}
+
+/* ── EXPANDER ── */
+[data-testid="stExpander"] {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-sm) !important;
+}
+
+[data-testid="stExpander"]:hover {
+  border-color: var(--border-neon) !important;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--neon);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--teal);
+}
+/* ── SIDEBAR NUCLEAR FIX ── */
+[data-testid="stSidebar"],
+[data-testid="stSidebar"] > div,
+[data-testid="stSidebar"] > div > div {
+  background: #12192c !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+[data-testid="stSidebar"] * {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+[data-testid="stSidebar"] p,
+[data-testid="stSidebar"] span,
+[data-testid="stSidebar"] label,
+[data-testid="stSidebar"] div {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+[data-testid="stSidebar"] .stButton > button {
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+}
+
+[data-testid="stSidebarCollapsedControl"] {
+  visibility: visible !important;
+  opacity: 1 !important;
+  color: #ffffff !important;
+}
